@@ -1,0 +1,162 @@
+/* src/styles/landing.css */
+
+.landing-bg{
+position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background-image:url('../assets/landing-bg.jpg');
+background-size:cover;
+background-position:center;
+text-align:center;
+font-family:Arial, Helvetica, sans-serif;
+overflow:hidden;
+}
+
+/* DARK OVERLAY */
+
+.landing-bg::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:1;
+}
+
+/* FLOATING WEATHER ICONS */
+
+.floating-icons{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:2;
+}
+
+.floating-icons span{
+position:absolute;
+font-size:40px;
+animation:floatIcons 12s linear infinite;
+opacity:0.8;
+}
+
+/* ICON POSITIONS */
+
+.floating-icons span:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.floating-icons span:nth-child(2){
+left:25%;
+animation-delay:2s;
+}
+
+.floating-icons span:nth-child(3){
+left:50%;
+animation-delay:4s;
+}
+
+.floating-icons span:nth-child(4){
+left:70%;
+animation-delay:6s;
+}
+
+.floating-icons span:nth-child(5){
+left:85%;
+animation-delay:8s;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes floatIcons{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-120px);
+}
+}
+
+/* CONTENT ABOVE OVERLAY */
+
+.landing-content{
+position:relative;
+z-index:3;
+color:white;
+padding:20px;
+animation:fadeIn 1.5s ease;
+}
+
+/* TITLE */
+
+.landing-title{
+font-size:56px;
+font-weight:bold;
+margin-bottom:10px;
+letter-spacing:1px;
+animation:slideDown 1.2s ease;
+}
+
+/* SUBTITLE */
+
+.landing-subtitle{
+font-size:20px;
+opacity:0.9;
+margin-bottom:25px;
+animation:fadeIn 2s ease;
+}
+
+/* BUTTON */
+
+.btn-primary{
+background:linear-gradient(45deg,#00aaff,#0077ff);
+color:white;
+padding:12px 28px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+font-size:16px;
+transition:all 0.3s ease;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* BUTTON HOVER */
+
+.btn-primary:hover{
+transform:scale(1.08);
+box-shadow:0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* FADE ANIMATION */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* TITLE ANIMATION */
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
