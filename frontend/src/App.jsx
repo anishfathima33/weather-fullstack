@@ -8,7 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <BrowserRouter basename="/WeatherPro">
+    <BrowserRouter basename="/">
       <Routes>
 
         <Route path="/" element={<Landing />} />
