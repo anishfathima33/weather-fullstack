@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Create Axios instance
 const API = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/", // base URL for your Django backend
+  baseURL: "https://weather-fullstack-1.onrender.com/api/",
 });
 
 // Request interceptor to attach JWT token
