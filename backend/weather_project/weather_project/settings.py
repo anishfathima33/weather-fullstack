@@ -140,23 +140,11 @@ TEMPLATES = [
 # --------------------------------------------------
 
 DATABASES = {
-
-    "default": {
-
-        "ENGINE": "django.db.backends.postgresql",
-
-        "NAME": env("DB_NAME", default="weather_app"),
-
-        "USER": env("DB_USER", default="postgres"),
-
-        "PASSWORD": env("DB_PASSWORD", default=""),
-
-        "HOST": env("DB_HOST", default="localhost"),
-
-        "PORT": env("DB_PORT", default="5432"),
-    }
+    "default": env.db(
+        "DATABASE_URL",
+        default="postgresql://postgres:postgres@localhost:5432/weather_app"
+    )
 }
-
 
 # --------------------------------------------------
 # PASSWORD VALIDATION
